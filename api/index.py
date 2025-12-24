@@ -19,3 +19,10 @@ def get_image(filename):
         os.path.join(STATIC_DIR, "images"),
         filename
     )
+
+@app.route("/hello")
+def hello():
+    name = request.args.get("name", "Gleen")
+    return jsonify({
+        "hello": name
+    })
